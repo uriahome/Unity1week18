@@ -19,10 +19,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //基本処理
-        MouseWheelClick = false;
+        //MouseWheelClick = false;
         MouseScroll = Input.GetAxis("Mouse ScrollWheel");//マウススクロールを取得する。手前で-0.1,奥にやると0.1くらい
         if(Input.GetMouseButtonDown(2)){
             MouseWheelClick = true;
+            Debug.Log("Click");
         }
     }
 
@@ -30,9 +31,11 @@ public class PlayerController : MonoBehaviour
     {
         //物理演算に関する処理
         if(MouseWheelClick){//ホイールクリックしていたら上向きの力も加える
-            MoveForce = new Vector3(MouseScroll*100,100,0);
+            MoveForce = new Vector3(MouseScroll*500,300,0);
+            Debug.Log("Jump");
+            MouseWheelClick = false;
         }else{
-            MoveForce = new Vector3(MouseScroll*100,0,0);
+            MoveForce = new Vector3(MouseScroll*500,0,0);
         }
         rb.AddForce(MoveForce);
         Speed = rb.velocity.magnitude;
