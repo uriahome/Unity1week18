@@ -29,6 +29,6 @@ public class CameraController : MonoBehaviour
         NewPosition.x = Player.transform.position.x + offset.x;
         //NewPosition.y = Player.transform.position.y + offset.y;
         //NewPosition.z = Player.transform.position.z + offset.z;
-        this.transform.position = Vector3.Lerp(transform.position, NewPosition, 2.0f * Time.deltaTime);//時間をかけて元居た地点から次に行く地点に移動する
+        this.transform.position = Vector3.Lerp(transform.position, NewPosition, 5.0f * Time.deltaTime);//時間をかけて元居た地点から次に行く地点に移動する
     }
 }
