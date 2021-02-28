@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    IEnumerator LoadScene(int Num){
+    IEnumerator LoadScene(int Num){//対応した番号のステージを読み込む
         FadeCanvasClone = Instantiate(FadeCanvasPrefab);
         fadeCanvas = FadeCanvasClone.GetComponent<FadeCanvas>();
         fadeCanvas.FadeIn = true;
@@ -49,6 +49,11 @@ public class GameManager : MonoBehaviour
     }
 
     public void RetryScene(){
+        StartCoroutine(LoadScene(CurrentStageNum));//ステージ番号を変更せずに読み込む
+    }
+
+    public void NextScene(){
+        CurrentStageNum++;//次のシーンの番号に進む
         StartCoroutine(LoadScene(CurrentStageNum));
     }
 }

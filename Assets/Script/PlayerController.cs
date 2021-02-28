@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         switch (collisionInfo.gameObject.tag)
         {
             case "Mushroom":
-            GameManager.instance.RetryScene();
+                GameManager.instance.NextScene();//次のシーンを読み込む
                 break;
             case "Ground":
                 Jump = false;
