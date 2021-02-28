@@ -54,4 +54,11 @@ public class PlayerController : MonoBehaviour
     void PlayerDeath(){
         GM.RetryScene();
     }
+
+    void OnCollisionEnter2D(Collision2D collisionInfo)
+    {
+        if(collisionInfo.gameObject.tag =="Mushroom"){//キノコに当たったら
+            GM.RetryScene();
+        }
+    }
 }
