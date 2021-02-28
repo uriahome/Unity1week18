@@ -45,5 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FadeCanvasPrefab: {fileID: 6531539786890411794, guid: 0ae6320ef80c19f4389cdbcfa73b4f30,
     type: 3}
-  StageName: []
+  StageName:
+  - Stage1
+  - Stage2
+  - Stage3
   CurrentStageNum: 0

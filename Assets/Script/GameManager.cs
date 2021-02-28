@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         fadeCanvas = FadeCanvasClone.GetComponent<FadeCanvas>();
         fadeCanvas.FadeIn = true;
         yield return new WaitForSeconds(FadeWaitTime);
-        yield return SceneManager.LoadSceneAsync(StageName[Num]);
+        yield return SceneManager.LoadSceneAsync(StageName[Num%3]);
         fadeCanvas.FadeOut = true;
     }
 
