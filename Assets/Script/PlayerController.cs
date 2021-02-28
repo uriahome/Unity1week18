@@ -13,11 +13,11 @@ public class PlayerController : MonoBehaviour
     public bool Death;
     public bool Jump;//ジャンプしているかどうか
 
-    GameManager GM;
+    //GameManager GM;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        //GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         Death = false;
     }
 
@@ -54,18 +54,15 @@ public class PlayerController : MonoBehaviour
     }
 
     void PlayerDeath(){
-        GM.RetryScene();
+        GameManager.instance.RetryScene();
     }
 
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
-        if(collisionInfo.gameObject.tag =="Mushroom"){//キノコに当たったら
-            GM.RetryScene();
-        }
         switch (collisionInfo.gameObject.tag)
         {
             case "Mushroom":
-                GM.RetryScene();
+            GameManager.instance.RetryScene();
                 break;
             case "Ground":
                 Jump = false;
