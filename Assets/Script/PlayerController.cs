@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float Speed;
     public bool MouseWheelClick;
     public bool Death;
+    public bool Jump;//ジャンプしているかどうか
 
     GameManager GM;
     void Start()
@@ -26,7 +27,8 @@ public class PlayerController : MonoBehaviour
         //基本処理
         //MouseWheelClick = false;
         MouseScroll = Input.GetAxis("Mouse ScrollWheel");//マウススクロールを取得する。手前で-0.1,奥にやると0.1くらい
-        if(Input.GetMouseButtonDown(2)){
+        if(Input.GetMouseButtonDown(2) && !Jump){
+            Jump = true;
             MouseWheelClick = true;
             Debug.Log("Click");
         }
@@ -59,6 +61,17 @@ public class PlayerController : MonoBehaviour
     {
         if(collisionInfo.gameObject.tag =="Mushroom"){//キノコに当たったら
             GM.RetryScene();
+        }
+        switch (collisionInfo.gameObject.tag)
+        {
+            case "Mushroom":
+                GM.RetryScene();
+                break;
+            case "Ground":
+                Jump = false;
+                break;
+            default:
+            break;
         }
     }
 }
