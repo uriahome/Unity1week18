@@ -3589,26 +3589,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7417328592101058426, guid: eb767393d78f40b468bddde45aa9fd05,
-        type: 3}
-      propertyPath: StageName.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7417328592101058426, guid: eb767393d78f40b468bddde45aa9fd05,
-        type: 3}
-      propertyPath: StageName.Array.data[0]
-      value: Stage1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7417328592101058426, guid: eb767393d78f40b468bddde45aa9fd05,
-        type: 3}
-      propertyPath: StageName.Array.data[1]
-      value: Stage2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7417328592101058426, guid: eb767393d78f40b468bddde45aa9fd05,
-        type: 3}
-      propertyPath: StageName.Array.data[2]
-      value: Stage3
-      objectReference: {fileID: 0}
     - target: {fileID: 7417328592101058427, guid: eb767393d78f40b468bddde45aa9fd05,
         type: 3}
       propertyPath: m_RootOrder

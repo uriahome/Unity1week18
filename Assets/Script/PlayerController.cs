@@ -13,12 +13,18 @@ public class PlayerController : MonoBehaviour
     public bool Death;
     public bool Jump;//ジャンプしているかどうか
 
+    //効果音の設定
+    public AudioSource audio;
+    public AudioClip JumpSE;
+
     //GameManager GM;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         //GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         Death = false;
+        audio = GetComponent<AudioSource>();
+        audio.volume = 0.5f;
     }
 
     // Update is called once per frame
@@ -31,6 +37,7 @@ public class PlayerController : MonoBehaviour
             Jump = true;
             MouseWheelClick = true;
             Debug.Log("Click");
+            audio.PlayOneShot(JumpSE);//効果音の再生
         }
 
         if(this.transform.position.y <= -3.0 && !Death){
