@@ -60,3 +60,5 @@ crashlytics-build.properties
 
 #音声をアップロードしないように
 Assets/Sound/
+#フォントをアップロードしないように
+Assets/Font/
