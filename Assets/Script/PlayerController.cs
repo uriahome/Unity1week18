@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         //物理演算に関する処理
         if(MouseWheelClick){//ホイールクリックしていたら上向きの力も加える
-            MoveForce = new Vector3(MouseScroll*300,300,0);
+            MoveForce = new Vector3(MouseScroll*300,400,0);
             Debug.Log("Jump");
             MouseWheelClick = false;
         }else{
