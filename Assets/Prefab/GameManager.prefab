@@ -50,6 +50,7 @@ MonoBehaviour:
   - Stage1
   - Stage2
   - Stage3
+  - Stage4
   CurrentStageNum: 0
 --- !u!82 &1307676521
 AudioSource:

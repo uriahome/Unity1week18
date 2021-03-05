@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)//1つだけ存在するようにする
         {
             instance = this;
+            transform.parent = null;//親要素を確実に消してDontDestroyOnLoad()できるようにする
             DontDestroyOnLoad(this.gameObject);
         }
         else
