@@ -487,6 +487,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniMapCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 5050927701914768669, guid: 202a98d70fa131f4ab89b57388ce58f3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 202a98d70fa131f4ab89b57388ce58f3, type: 3}
 --- !u!1001 &2071871464876531463
@@ -707,6 +712,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296224902831794964, guid: e829598e462d4c642b669280830cbbd3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8296224902831794971, guid: e829598e462d4c642b669280830cbbd3,
         type: 3}
