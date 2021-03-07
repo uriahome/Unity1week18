@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;//UIをいじるために
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class GameManager : MonoBehaviour
     public string[] StageName;//stageの名前リスト
     public int CurrentStageNum = 0;//現在挑んでいるステージ番号
     public int DeathCount;//失敗した回数
+
+    public GameObject ScoreTextObj;//失敗した回数を表示するテキストを持つオブジェクト
+    public Text ScoreText;
+    public GameObject StageTextObj;//挑戦中のステージを表示するテキストを持つオブジェクト
+    public Text StageText;
 
     void Awake()
     {
@@ -33,13 +39,17 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-
+        ScoreTextObj = GameObject.Find("GameManager/Canvas/ScoreText").gameObject;
+        ScoreText = ScoreTextObj.GetComponent<Text>();
+        StageTextObj = GameObject.Find("GameManager/Canvas/StageText").gameObject;
+        StageText = StageTextObj.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        ScoreText.text = DeathCount.ToString();
+        StageText.text = StageName[CurrentStageNum].ToString();
     }
 
     IEnumerator LoadScene(int Num){//対応した番号のステージを読み込む
@@ -47,7 +57,7 @@ public class GameManager : MonoBehaviour
         fadeCanvas = FadeCanvasClone.GetComponent<FadeCanvas>();
         fadeCanvas.FadeIn = true;
         yield return new WaitForSeconds(FadeWaitTime);
-        yield return SceneManager.LoadSceneAsync(StageName[Num%StageName.Length]);
+        yield return SceneManager.LoadSceneAsync(StageName[Num]);
         fadeCanvas.FadeOut = true;
     }
 
@@ -58,6 +68,7 @@ public class GameManager : MonoBehaviour
 
     public void NextScene(){
         CurrentStageNum++;//次のシーンの番号に進む
+        CurrentStageNum %= StageName.Length;
         StartCoroutine(LoadScene(CurrentStageNum));
     }
 }
